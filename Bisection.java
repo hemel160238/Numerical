@@ -1,10 +1,14 @@
 import javaluator.DoubleEvaluator;
 import javaluator.StaticVariableSet;
 
+import java.text.DecimalFormat;
+
 public class Bisection implements FunctionEvaluator {
     private String equation;
     private double xl,xu,tolerance;
     private int maxIteration;
+    DecimalFormat decimalFormat = new DecimalFormat("###.###");
+
 
     public Bisection(String equation, double xl, double xu, double tolerance, int maxIteration) {
         this.equation = equation;
@@ -54,7 +58,8 @@ public class Bisection implements FunctionEvaluator {
                     break;
                 }
             }
-            System.out.println(iter+"\t\t\t"+xl+"\t"+xu+"\t"+xr+"\t\t"+ea);
+            //System.out.println(iter+"\t\t\t"+xl+"\t"+xu+"\t"+xr+"\t\t"+ea);
+            System.out.println(iter+"\t\t\t"+decimalFormat.format(xl)+"\t"+decimalFormat.format(xu)+"\t"+decimalFormat.format(xr)+"\t\t"+decimalFormat.format(ea));
 
             if ( f(xl)*f(xr) < 0)
             {
