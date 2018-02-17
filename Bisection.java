@@ -44,8 +44,7 @@ public class Bisection implements FunctionEvaluator {
                 break;
             }
 
-            if(iter > 1)
-            {
+
                 if ( ea <= tolerance )
                 {
                     System.out.println(iter+"\t\t\t"+xl+"\t"+xu+"\t"+xr+"\t\t"+ea);
@@ -53,7 +52,7 @@ public class Bisection implements FunctionEvaluator {
                     //System.out.println("Iteration\t\tXl\t\tXu\t\tXr\t\t\tEa");
                     break;
                 }
-            }
+
             System.out.println(iter+"\t\t\t"+xl+"\t"+xu+"\t"+xr+"\t\t"+ea);
 
             if ( f(xl)*f(xr) < 0)
